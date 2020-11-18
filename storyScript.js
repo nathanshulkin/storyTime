@@ -24,8 +24,6 @@ function get_json(file_name) {
 	var data = json_parser(json_text);
 	return data;
 }
-
-
 // \brief create requester for getting files
 // \todo support old browser (ex: IE6, IE5)
 function create_http_request() {
@@ -36,7 +34,6 @@ function create_http_request() {
 	}
 	return requester;
 }
-
 // \brief return true when posible JSON object
 // refer to "http://stackoverflow.com/questions/1787020/json-object-in-ie6-how"
 function enable_json() {
@@ -45,7 +42,6 @@ function enable_json() {
 	}
 	return true;
 }
-
 // \brief translate JSON into Javascript object
 // \param(json_data) JSON
 // \ret 
@@ -201,8 +197,7 @@ mainContainer.appendChild(moon);
 app.appendChild(mainContainer);
 
 
+var stillTrying = get_json("https://raw.githubusercontent.com/nathanshulkin/storyTime/master/story.json");
 
-var stillTrying = get_json("https://raw.githubusercontent.com/nathanshulkin/findingMeaning/master/chLg.json");
-
-const tar = createMoon(stillTrying['ajax']['gs1']['mScore']);
+const tar = createMoon(stillTrying['moon']);
 app.appendChild(tar);
